@@ -350,7 +350,7 @@ body {
 
 .hero-content p {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
     color: #FF4B26;
     line-height: 1.5;
 }
@@ -366,7 +366,7 @@ body {
     line-height: 1.6;
     margin-bottom: 10px;
     text-align: justify;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 
@@ -451,7 +451,7 @@ body {
   .tab-item.active {
     color: #000;
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
   }
   
   .tab-item.active::after {
@@ -468,7 +468,7 @@ body {
   .tab-content {
     padding: 50px 20px;
     display: none;
-    background-color: #F6F5F5;
+    background-color: white;
   }
   
   .tab-content.active {
@@ -488,7 +488,7 @@ body {
     line-height: 1.6;
     margin-bottom: 10px;
     text-align: justify;
-    font-weight: 600;
+    font-weight: 500;
     max-width: 900px;
   }
   
