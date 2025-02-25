@@ -56,7 +56,7 @@ body {
     gap: 5px;
 }
 
-  .buttons-container {
+.buttons-container {
     position: absolute;
     right:10%;
     top: 10%;
@@ -87,6 +87,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s;
+    position: relative;
 }
 
 .nav-links a.active {
@@ -187,7 +188,7 @@ body {
         justify-content: flex-start;
         gap: 30px;
         padding: 100px 20px 30px;
-        transition: right 0.3s ease;
+        transition: left 0.3s ease;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     }
     
@@ -222,6 +223,29 @@ body {
     .mobile-menu-btn.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
+    
+    /* Adjust dropdown for mobile */
+    .dropdown {
+        position: static;
+        width: 100%;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: 0 0 0 20px;
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -242,6 +266,54 @@ body {
     }
 }
 
+/* New CSS for dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a::after {
+    content: '▼';
+    font-size: 10px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #f9f9f9;
+    color: #FF4B26;
+}
 /* Hero Section Styles */
 .hero {
     position: relative;
@@ -400,7 +472,7 @@ body {
     align-items: center;
     gap: 60px;
     margin: 0 auto;
-    padding: 50px 0px;
+    padding: 50px 20px;
     margin-top: 50px;
 }
 
@@ -416,8 +488,8 @@ body {
 }
 
 .about-text {
-    font-size: 24px;
-    line-height: 1.6;
+    font-size: 1.4rem;
+    line-height: 1.2;
     margin-bottom: 10px;
     text-align: justify;
     font-weight: 600;
@@ -470,7 +542,7 @@ body {
     align-items: center;
     gap: 60px;
     margin: 0 auto;
-    padding: 50px 0px;
+    padding: 50px 20px;
 }
 .history-wrapper{
     width: 100%;
@@ -501,8 +573,8 @@ body {
 
 
 .machine-content p {
-    font-size: 24px;
-    line-height: 1.6;
+    font-size: 1.4rem;
+    line-height: 1.2;
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -531,7 +603,7 @@ body {
 
 .certified-section {
     margin: 0 auto;
-    padding: 50px 0px;
+    padding: 50px 20px;
     margin-top: 50px;
 }
 .certificate-wrapper{
@@ -580,7 +652,7 @@ body {
     align-items: start;
     flex-direction: column;
     margin: 0 auto;
-    padding: 40px 0px;
+    padding: 40px 20px;
 }
 .testi-wrapper{
     width: 100%;
@@ -602,7 +674,7 @@ body {
 
 .arrow {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 1.4rem;
     color: #666;
     user-select: none;
     z-index: 2;
@@ -885,4 +957,64 @@ body {
     .contact-item {
         font-size: 14px;
     }
+}
+
+@media screen and (max-width:768px){
+    .about-section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 60px;
+        margin: 0 auto;
+        padding: 50px 20px;
+        margin-top: 50px;
+    }
+    .about-content {
+        max-width: 100%;
+    }
+    .about-video {
+        position: relative;
+        width: 100%; /* Adjust as needed */
+        height: 280px; /* Adjust as needed */
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: red;
+    }
+    .machine-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background: #f8f8f8;
+        padding: 60px 40px;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+    }
+    .machine-content {
+        max-width: 100%;
+    }
+    .machine-img img {
+        width: 300px;
+        height: 400px;
+        min-width: 200px;
+        height: auto;
+    }
+    .title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 35px;
+    }
+    .testi-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: start;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    
 }
